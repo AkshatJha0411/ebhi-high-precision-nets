@@ -63,15 +63,11 @@ HCS-NET provides a complementary, robust pipeline tailored for highly accurate p
 * **Data Processing:** Implements automated dataset statistics computation, image normalization, and thresholding.
 * **Visual Fidelity:** Includes built-in logic for side-by-side comparison of the Original Image, Predicted Mask, and Ground Truth.
 
-**Results:**
-![HCS-NET Results](hcs-results.png)
-
-**Predictions:**
-![HCS-NET Predictions](hcs-predictions.png)
+**Predictions and Results:**
+![HCS-NET Predictions and Results](hcs-results.png)
 
 **Confusion Matrix:**
 ![HCS-NET Confusion Matrix](hcs-confusion.png)
-
 
 ## 🤝 Contributors - Group 15
 
