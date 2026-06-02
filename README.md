@@ -50,3 +50,15 @@ HCS-NET provides a complementary, robust pipeline tailored for highly accurate p
 * **Segmentation Focus:** Prioritizes exact overlap between predicted tissue boundaries and expert ground-truth annotations using Dice coefficients.
 * **Data Processing:** Implements automated dataset statistics computation, image normalization, and thresholding.
 * **Visual Fidelity:** Includes built-in logic for side-by-side comparison of the Original Image, Predicted Mask, and Ground Truth.
+
+## 🤝 Contributors - Group 15
+
+* [Akshat Jha](https://github.com/AkshatJha0411)
+* [Bhavya Sunkari](https://github.com/Bhavya445)
+* [Madhav Aggarwal](https://github.com/madhavCodez1006)
+* Harsh Vardhan Sharma
+* Shubhankit Singh
+* Aashvi Garg
+* Anoushka Waghmare
+* Sezal Rana
+* Mohit Kulhari
