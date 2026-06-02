@@ -37,6 +37,18 @@ GR-HDUNET serves as the main architecture for this repository. It has been upgra
 * **Robust Evaluation:** Evaluates ensemble models based on robust clinical metrics including AUC, F1-score, and Accuracy per pathology type.
 * **Automated Pipeline:** Features deterministic environment setup, automated metric compilation, and automated generation of ROC curves and detailed metric tables.
 
+**Predictions:**
+![GR-HDUNET Predictions](grhdu-predictions.png)
+
+**Results:**
+![GR-HDUNET Results](grhdu-results.png)
+
+**Plots:**
+![GR-HDUNET Curves](grhdu-curves.png)
+
+**Confusion Matrix:**
+![GR-HDUNET Confusion Matrix](grhdu-confusion.png)
+
 ---
 
 ## Secondary Architecture: HCS-NET
@@ -50,6 +62,16 @@ HCS-NET provides a complementary, robust pipeline tailored for highly accurate p
 * **Segmentation Focus:** Prioritizes exact overlap between predicted tissue boundaries and expert ground-truth annotations using Dice coefficients.
 * **Data Processing:** Implements automated dataset statistics computation, image normalization, and thresholding.
 * **Visual Fidelity:** Includes built-in logic for side-by-side comparison of the Original Image, Predicted Mask, and Ground Truth.
+
+**Results:**
+![HCS-NET Results](hcs-results.png)
+
+**Predictions:**
+![HCS-NET Predictions](hcs-predictions.png)
+
+**Confusion Matrix:**
+![HCS-NET Confusion Matrix](hcs-confusion.png)
+
 
 ## 🤝 Contributors - Group 15
 
