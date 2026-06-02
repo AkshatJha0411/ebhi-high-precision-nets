@@ -1,0 +1,4740 @@
+
+====================================================================================================
+ENVIRONMENT
+====================================================================================================
+Started: 2026-04-21 17:09:53
+Torch: 2.11.0+cu130
+CUDA device count: 1
+GPU 0: NVIDIA RTX PRO 4500 Blackwell | 31.37 GB
+
+====================================================================================================
+DATASET SCAN
+====================================================================================================
+Adenocarcinoma       | images= 795 | labels= 795 | paired= 795 | dropped_img=  0 | dropped_lbl=  0
+High-grade IN        | images= 186 | labels= 186 | paired= 186 | dropped_img=  0 | dropped_lbl=  0
+Low-grade IN         | images= 637 | labels= 637 | paired= 637 | dropped_img=  0 | dropped_lbl=  0
+Normal               | images=  76 | labels=  76 | paired=  76 | dropped_img=  0 | dropped_lbl=  0
+Polyp                | images= 474 | labels= 474 | paired= 474 | dropped_img=  0 | dropped_lbl=  0
+Serrated adenoma     | images=  58 | labels=  58 | paired=  58 | dropped_img=  0 | dropped_lbl=  0
+Total image/mask pairs found: 2226
+
+====================================================================================================
+WARMUP DECODE CACHE
+====================================================================================================
+Caching RGB decodes: 100%
+Caching mask decodes: 100%
+RGB cache files: 2226
+Mask cache files: 2226
+
+====================================================================================================
+DATA SPLITS
+====================================================================================================
+train: 1557
+class_display
+Adenocarcinoma      556
+High-grade IN       130
+Low-grade IN        445
+Normal               54
+Polyp               332
+Serrated adenoma     40
+val  : 223
+class_display
+Adenocarcinoma      80
+High-grade IN       19
+Low-grade IN        64
+Normal               7
+Polyp               47
+Serrated adenoma     6
+test : 446
+class_display
+Adenocarcinoma      159
+High-grade IN        37
+Low-grade IN        128
+Normal               15
+Polyp                95
+Serrated adenoma     12
+
+====================================================================================================
+TRAIN PROPOSED SEGMENTATION
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "seg_imagenet_normalize": true,
+  "seg_lambda_gan": 0.25,
+  "seg_lambda_dice": 1.0,
+  "seg_lambda_bce": 0.2,
+  "seg_lambda_boundary": 0.1,
+  "seg_disc_lr": 0.0001,
+  "seg_disc_update_interval": 2,
+  "seg_early_stopping_patience": 20,
+  "seg_early_stopping_min_delta": 0.0001,
+  "seg_eval_tta": true,
+  "seg_tune_inference_on_val": true
+}
+
+[Proposed Seg] Epoch 1/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 1,
+  "train_loss_g": 0.444003,
+  "train_loss_d": 0.687798,
+  "train_dice": 0.900833,
+  "val_loss_g": 0.373612,
+  "val_loss_d": 0.696038,
+  "val_dice": 0.93139,
+  "best_val_dice": 0.93139,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[Proposed Seg] Best val_dice so far: 0.931390 at epoch 1 | no_improve=0/20
+
+[Proposed Seg] Epoch 2/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 2,
+  "train_loss_g": 0.367583,
+  "train_loss_d": 0.677734,
+  "train_dice": 0.937631,
+  "val_loss_g": 0.370508,
+  "val_loss_d": 0.692728,
+  "val_dice": 0.940528,
+  "best_val_dice": 0.940528,
+  "best_epoch": 2,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[Proposed Seg] Best val_dice so far: 0.940528 at epoch 2 | no_improve=0/20
+
+[Proposed Seg] Epoch 3/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 3,
+  "train_loss_g": 0.364237,
+  "train_loss_d": 0.676809,
+  "train_dice": 0.940922,
+  "val_loss_g": 0.357572,
+  "val_loss_d": 0.689285,
+  "val_dice": 0.94149,
+  "best_val_dice": 0.94149,
+  "best_epoch": 3,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[Proposed Seg] Best val_dice so far: 0.941490 at epoch 3 | no_improve=0/20
+
+[Proposed Seg] Epoch 4/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 4,
+  "train_loss_g": 0.358736,
+  "train_loss_d": 0.678819,
+  "train_dice": 0.943089,
+  "val_loss_g": 0.339432,
+  "val_loss_d": 0.687023,
+  "val_dice": 0.947157,
+  "best_val_dice": 0.947157,
+  "best_epoch": 4,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[Proposed Seg] Best val_dice so far: 0.947157 at epoch 4 | no_improve=0/20
+
+[Proposed Seg] Epoch 5/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 5,
+  "train_loss_g": 0.355591,
+  "train_loss_d": 0.678103,
+  "train_dice": 0.946001,
+  "val_loss_g": 0.352353,
+  "val_loss_d": 0.689686,
+  "val_dice": 0.947235,
+  "best_val_dice": 0.947157,
+  "best_epoch": 4,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[Proposed Seg] Best val_dice so far: 0.947157 at epoch 4 | no_improve=1/20
+
+[Proposed Seg] Epoch 6/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 6,
+  "train_loss_g": 0.358143,
+  "train_loss_d": 0.681748,
+  "train_dice": 0.947253,
+  "val_loss_g": 0.325897,
+  "val_loss_d": 0.693509,
+  "val_dice": 0.944653,
+  "best_val_dice": 0.947157,
+  "best_epoch": 4,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[Proposed Seg] Best val_dice so far: 0.947157 at epoch 4 | no_improve=2/20
+
+[Proposed Seg] Epoch 7/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 7,
+  "train_loss_g": 0.356307,
+  "train_loss_d": 0.681659,
+  "train_dice": 0.948168,
+  "val_loss_g": 0.344297,
+  "val_loss_d": 0.6857,
+  "val_dice": 0.9481,
+  "best_val_dice": 0.9481,
+  "best_epoch": 7,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[Proposed Seg] Best val_dice so far: 0.948100 at epoch 7 | no_improve=0/20
+
+[Proposed Seg] Epoch 8/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 8,
+  "train_loss_g": 0.350656,
+  "train_loss_d": 0.681788,
+  "train_dice": 0.949028,
+  "val_loss_g": 0.314152,
+  "val_loss_d": 0.692461,
+  "val_dice": 0.946344,
+  "best_val_dice": 0.9481,
+  "best_epoch": 7,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[Proposed Seg] Best val_dice so far: 0.948100 at epoch 7 | no_improve=1/20
+
+[Proposed Seg] Epoch 9/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 9,
+  "train_loss_g": 0.350636,
+  "train_loss_d": 0.680071,
+  "train_dice": 0.950558,
+  "val_loss_g": 0.35546,
+  "val_loss_d": 0.687664,
+  "val_dice": 0.942628,
+  "best_val_dice": 0.9481,
+  "best_epoch": 7,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[Proposed Seg] Best val_dice so far: 0.948100 at epoch 7 | no_improve=2/20
+
+[Proposed Seg] Epoch 10/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 10,
+  "train_loss_g": 0.342081,
+  "train_loss_d": 0.68751,
+  "train_dice": 0.952945,
+  "val_loss_g": 0.351681,
+  "val_loss_d": 0.688918,
+  "val_dice": 0.949307,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=0/20
+
+[Proposed Seg] Epoch 11/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 11,
+  "train_loss_g": 0.346358,
+  "train_loss_d": 0.685381,
+  "train_dice": 0.951733,
+  "val_loss_g": 0.37026,
+  "val_loss_d": 0.687775,
+  "val_dice": 0.943736,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=1/20
+
+[Proposed Seg] Epoch 12/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 12,
+  "train_loss_g": 0.350935,
+  "train_loss_d": 0.679034,
+  "train_dice": 0.95188,
+  "val_loss_g": 0.382996,
+  "val_loss_d": 0.692352,
+  "val_dice": 0.947346,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=2/20
+
+[Proposed Seg] Epoch 13/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 13,
+  "train_loss_g": 0.3401,
+  "train_loss_d": 0.680542,
+  "train_dice": 0.954055,
+  "val_loss_g": 0.379001,
+  "val_loss_d": 0.687237,
+  "val_dice": 0.941684,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=3/20
+
+[Proposed Seg] Epoch 14/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 14,
+  "train_loss_g": 0.339094,
+  "train_loss_d": 0.683861,
+  "train_dice": 0.953193,
+  "val_loss_g": 0.419107,
+  "val_loss_d": 0.70524,
+  "val_dice": 0.940963,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=4/20
+
+[Proposed Seg] Epoch 15/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 15,
+  "train_loss_g": 0.342513,
+  "train_loss_d": 0.694442,
+  "train_dice": 0.952931,
+  "val_loss_g": 0.363798,
+  "val_loss_d": 0.687072,
+  "val_dice": 0.946617,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=5/20
+
+[Proposed Seg] Epoch 16/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 16,
+  "train_loss_g": 0.347341,
+  "train_loss_d": 0.683201,
+  "train_dice": 0.952164,
+  "val_loss_g": 0.34483,
+  "val_loss_d": 0.692123,
+  "val_dice": 0.938957,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=6/20
+
+[Proposed Seg] Epoch 17/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 17,
+  "train_loss_g": 0.352305,
+  "train_loss_d": 0.690062,
+  "train_dice": 0.95386,
+  "val_loss_g": 0.353377,
+  "val_loss_d": 0.693049,
+  "val_dice": 0.942989,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=7/20
+
+[Proposed Seg] Epoch 18/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 18,
+  "train_loss_g": 0.339612,
+  "train_loss_d": 0.681556,
+  "train_dice": 0.956401,
+  "val_loss_g": 0.32499,
+  "val_loss_d": 0.698586,
+  "val_dice": 0.946603,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=8/20
+
+[Proposed Seg] Epoch 19/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 19,
+  "train_loss_g": 0.342199,
+  "train_loss_d": 0.685492,
+  "train_dice": 0.956243,
+  "val_loss_g": 0.349867,
+  "val_loss_d": 0.686986,
+  "val_dice": 0.946252,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=9/20
+
+[Proposed Seg] Epoch 20/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 20,
+  "train_loss_g": 0.345625,
+  "train_loss_d": 0.689535,
+  "train_dice": 0.955962,
+  "val_loss_g": 0.292816,
+  "val_loss_d": 0.726708,
+  "val_dice": 0.945515,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=10/20
+
+[Proposed Seg] Epoch 21/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 21,
+  "train_loss_g": 0.348488,
+  "train_loss_d": 0.685218,
+  "train_dice": 0.95777,
+  "val_loss_g": 0.381788,
+  "val_loss_d": 0.689074,
+  "val_dice": 0.948195,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=11/20
+
+[Proposed Seg] Epoch 22/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 22,
+  "train_loss_g": 0.335424,
+  "train_loss_d": 0.683294,
+  "train_dice": 0.957736,
+  "val_loss_g": 0.380778,
+  "val_loss_d": 0.688657,
+  "val_dice": 0.947166,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 12
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=12/20
+
+[Proposed Seg] Epoch 23/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 23,
+  "train_loss_g": 0.338611,
+  "train_loss_d": 0.679443,
+  "train_dice": 0.958048,
+  "val_loss_g": 0.35926,
+  "val_loss_d": 0.68064,
+  "val_dice": 0.947918,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 13
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=13/20
+
+[Proposed Seg] Epoch 24/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 24,
+  "train_loss_g": 0.35222,
+  "train_loss_d": 0.686603,
+  "train_dice": 0.956934,
+  "val_loss_g": 0.374955,
+  "val_loss_d": 0.687679,
+  "val_dice": 0.945433,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 14
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=14/20
+
+[Proposed Seg] Epoch 25/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 25,
+  "train_loss_g": 0.337145,
+  "train_loss_d": 0.687181,
+  "train_dice": 0.958987,
+  "val_loss_g": 0.391013,
+  "val_loss_d": 0.687381,
+  "val_dice": 0.943454,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 15
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=15/20
+
+[Proposed Seg] Epoch 26/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 26,
+  "train_loss_g": 0.338859,
+  "train_loss_d": 0.678317,
+  "train_dice": 0.958159,
+  "val_loss_g": 0.325742,
+  "val_loss_d": 0.695187,
+  "val_dice": 0.946076,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 16
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=16/20
+
+[Proposed Seg] Epoch 27/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 27,
+  "train_loss_g": 0.353805,
+  "train_loss_d": 0.685051,
+  "train_dice": 0.957921,
+  "val_loss_g": 0.335274,
+  "val_loss_d": 0.683192,
+  "val_dice": 0.948796,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 17
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=17/20
+
+[Proposed Seg] Epoch 28/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 28,
+  "train_loss_g": 0.340573,
+  "train_loss_d": 0.678199,
+  "train_dice": 0.959236,
+  "val_loss_g": 0.406841,
+  "val_loss_d": 0.696613,
+  "val_dice": 0.946338,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 18
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=18/20
+
+[Proposed Seg] Epoch 29/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 29,
+  "train_loss_g": 0.348409,
+  "train_loss_d": 0.683207,
+  "train_dice": 0.95883,
+  "val_loss_g": 0.463497,
+  "val_loss_d": 0.729814,
+  "val_dice": 0.943492,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 19
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=19/20
+
+[Proposed Seg] Epoch 30/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 30,
+  "train_loss_g": 0.343574,
+  "train_loss_d": 0.673632,
+  "train_dice": 0.960225,
+  "val_loss_g": 0.402038,
+  "val_loss_d": 0.683834,
+  "val_dice": 0.945891,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 20
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=20/20
+[Proposed Seg] Early stopping triggered at epoch 30. Best val_dice=0.949307 at epoch 10.
+Tuning seg inference proposed_methodology: 100%
+{
+  "model_name": "proposed_methodology",
+  "selected_threshold": 0.55,
+  "selected_close_kernel": 0,
+  "selected_open_kernel": 3,
+  "selection_score": 0.89806,
+  "summary": {
+    "Dice": 0.953106,
+    "Jaccard": 0.913685,
+    "BF-score": 0.823631,
+    "HOG-sim": 0.805175
+  }
+}
+
+====================================================================================================
+EVALUATE SEGMENTATION: Proposed Methodology
+====================================================================================================
+Evaluating Proposed Methodology: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: train
+====================================================================================================
+Generating masks train: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: val
+====================================================================================================
+Generating masks val: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: test
+====================================================================================================
+Generating masks test: 100%
+
+====================================================================================================
+TRAIN CLASSIFIER: vit
+====================================================================================================
+{
+  "cls_image_size": 224,
+  "cls_imagenet_normalize": true,
+  "cls_mask_background_alpha": 0.2,
+  "cls_mask_blur_kernel": 7,
+  "cls_early_stopping_patience": 10,
+  "cls_early_stopping_min_delta": 0.0001,
+  "cls_use_class_weights": true,
+  "cls_use_weighted_sampler": false,
+  "class_weights": {
+    "Adenocarcinoma": 0.4667,
+    "High-grade IN": 1.9962,
+    "Low-grade IN": 0.5831,
+    "Normal": 4.8056,
+    "Polyp": 0.7816,
+    "Serrated adenoma": 6.4875
+  }
+}
+
+[vit] Epoch 1/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 1,
+  "train_loss": 1.907876,
+  "train_acc": 32.8838,
+  "val_loss": 1.457333,
+  "val_acc": 39.0135,
+  "best_val_acc": 39.0135,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 39.0135 at epoch 1 | no_improve=0/10
+
+[vit] Epoch 2/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 2,
+  "train_loss": 1.062608,
+  "train_acc": 53.2434,
+  "val_loss": 0.773543,
+  "val_acc": 66.3677,
+  "best_val_acc": 66.3677,
+  "best_epoch": 2,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 66.3677 at epoch 2 | no_improve=0/10
+
+[vit] Epoch 3/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 3,
+  "train_loss": 0.775674,
+  "train_acc": 65.3179,
+  "val_loss": 0.99136,
+  "val_acc": 59.6413,
+  "best_val_acc": 66.3677,
+  "best_epoch": 2,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[vit] Best val_acc so far: 66.3677 at epoch 2 | no_improve=1/10
+
+[vit] Epoch 4/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 4,
+  "train_loss": 0.67518,
+  "train_acc": 70.6487,
+  "val_loss": 0.668105,
+  "val_acc": 78.9238,
+  "best_val_acc": 78.9238,
+  "best_epoch": 4,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 78.9238 at epoch 4 | no_improve=0/10
+
+[vit] Epoch 5/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 5,
+  "train_loss": 0.580267,
+  "train_acc": 76.3648,
+  "val_loss": 0.426052,
+  "val_acc": 78.9238,
+  "best_val_acc": 78.9238,
+  "best_epoch": 4,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[vit] Best val_acc so far: 78.9238 at epoch 4 | no_improve=1/10
+
+[vit] Epoch 6/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 6,
+  "train_loss": 0.368407,
+  "train_acc": 84.5215,
+  "val_loss": 0.566001,
+  "val_acc": 84.3049,
+  "best_val_acc": 84.3049,
+  "best_epoch": 6,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 84.3049 at epoch 6 | no_improve=0/10
+
+[vit] Epoch 7/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 7,
+  "train_loss": 0.399522,
+  "train_acc": 82.8516,
+  "val_loss": 0.697705,
+  "val_acc": 75.3363,
+  "best_val_acc": 84.3049,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[vit] Best val_acc so far: 84.3049 at epoch 6 | no_improve=1/10
+
+[vit] Epoch 8/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 8,
+  "train_loss": 0.37244,
+  "train_acc": 84.9711,
+  "val_loss": 0.481984,
+  "val_acc": 83.4081,
+  "best_val_acc": 84.3049,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[vit] Best val_acc so far: 84.3049 at epoch 6 | no_improve=2/10
+
+[vit] Epoch 9/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 9,
+  "train_loss": 0.360755,
+  "train_acc": 84.0077,
+  "val_loss": 0.89185,
+  "val_acc": 83.4081,
+  "best_val_acc": 84.3049,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[vit] Best val_acc so far: 84.3049 at epoch 6 | no_improve=3/10
+
+[vit] Epoch 10/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 10,
+  "train_loss": 0.320376,
+  "train_acc": 84.7142,
+  "val_loss": 0.551828,
+  "val_acc": 83.8565,
+  "best_val_acc": 84.3049,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[vit] Best val_acc so far: 84.3049 at epoch 6 | no_improve=4/10
+
+[vit] Epoch 11/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 11,
+  "train_loss": 0.276009,
+  "train_acc": 88.8247,
+  "val_loss": 0.594043,
+  "val_acc": 85.2018,
+  "best_val_acc": 85.2018,
+  "best_epoch": 11,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 85.2018 at epoch 11 | no_improve=0/10
+
+[vit] Epoch 12/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 12,
+  "train_loss": 0.235081,
+  "train_acc": 91.201,
+  "val_loss": 0.44502,
+  "val_acc": 84.7534,
+  "best_val_acc": 85.2018,
+  "best_epoch": 11,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[vit] Best val_acc so far: 85.2018 at epoch 11 | no_improve=1/10
+
+[vit] Epoch 13/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 13,
+  "train_loss": 0.151357,
+  "train_acc": 93.8985,
+  "val_loss": 0.776883,
+  "val_acc": 83.8565,
+  "best_val_acc": 85.2018,
+  "best_epoch": 11,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[vit] Best val_acc so far: 85.2018 at epoch 11 | no_improve=2/10
+
+[vit] Epoch 14/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 14,
+  "train_loss": 0.214137,
+  "train_acc": 90.8157,
+  "val_loss": 0.654831,
+  "val_acc": 86.9955,
+  "best_val_acc": 86.9955,
+  "best_epoch": 14,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 86.9955 at epoch 14 | no_improve=0/10
+
+[vit] Epoch 15/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 15,
+  "train_loss": 0.118735,
+  "train_acc": 95.3757,
+  "val_loss": 0.743281,
+  "val_acc": 88.3408,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=0/10
+
+[vit] Epoch 16/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 16,
+  "train_loss": 0.059001,
+  "train_acc": 97.2383,
+  "val_loss": 1.166886,
+  "val_acc": 84.7534,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=1/10
+
+[vit] Epoch 17/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 17,
+  "train_loss": 0.172663,
+  "train_acc": 93.5774,
+  "val_loss": 0.639514,
+  "val_acc": 82.0628,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=2/10
+
+[vit] Epoch 18/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 18,
+  "train_loss": 0.068447,
+  "train_acc": 96.9814,
+  "val_loss": 0.759826,
+  "val_acc": 86.9955,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=3/10
+
+[vit] Epoch 19/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 19,
+  "train_loss": 0.093742,
+  "train_acc": 96.0822,
+  "val_loss": 0.797923,
+  "val_acc": 84.7534,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=4/10
+
+[vit] Epoch 20/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 20,
+  "train_loss": 0.051089,
+  "train_acc": 97.8805,
+  "val_loss": 0.789093,
+  "val_acc": 88.3408,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=5/10
+
+[vit] Epoch 21/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 21,
+  "train_loss": 0.077576,
+  "train_acc": 97.1098,
+  "val_loss": 1.449784,
+  "val_acc": 79.8206,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=6/10
+
+[vit] Epoch 22/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 22,
+  "train_loss": 0.121225,
+  "train_acc": 94.8619,
+  "val_loss": 1.093173,
+  "val_acc": 82.0628,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=7/10
+
+[vit] Epoch 23/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 23,
+  "train_loss": 0.050599,
+  "train_acc": 97.8163,
+  "val_loss": 0.83778,
+  "val_acc": 86.9955,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=8/10
+
+[vit] Epoch 24/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 24,
+  "train_loss": 0.029886,
+  "train_acc": 98.8439,
+  "val_loss": 0.768294,
+  "val_acc": 87.8924,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=9/10
+
+[vit] Epoch 25/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 25,
+  "train_loss": 0.025239,
+  "train_acc": 98.8439,
+  "val_loss": 0.969985,
+  "val_acc": 87.4439,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=10/10
+[vit] Early stopping triggered at epoch 25. Best val_acc=88.3408 at epoch 15.
+
+====================================================================================================
+TRAIN CLASSIFIER: swin
+====================================================================================================
+{
+  "cls_image_size": 224,
+  "cls_imagenet_normalize": true,
+  "cls_mask_background_alpha": 0.2,
+  "cls_mask_blur_kernel": 7,
+  "cls_early_stopping_patience": 10,
+  "cls_early_stopping_min_delta": 0.0001,
+  "cls_use_class_weights": true,
+  "cls_use_weighted_sampler": false,
+  "class_weights": {
+    "Adenocarcinoma": 0.4667,
+    "High-grade IN": 1.9962,
+    "Low-grade IN": 0.5831,
+    "Normal": 4.8056,
+    "Polyp": 0.7816,
+    "Serrated adenoma": 6.4875
+  }
+}
+
+[swin] Epoch 1/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 1,
+  "train_loss": 0.977267,
+  "train_acc": 66.3455,
+  "val_loss": 1.06594,
+  "val_acc": 74.4395,
+  "best_val_acc": 74.4395,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 74.4395 at epoch 1 | no_improve=0/10
+
+[swin] Epoch 2/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 2,
+  "train_loss": 0.537214,
+  "train_acc": 79.255,
+  "val_loss": 0.465234,
+  "val_acc": 70.4036,
+  "best_val_acc": 74.4395,
+  "best_epoch": 1,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[swin] Best val_acc so far: 74.4395 at epoch 1 | no_improve=1/10
+
+[swin] Epoch 3/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 3,
+  "train_loss": 0.353661,
+  "train_acc": 86.1272,
+  "val_loss": 0.601278,
+  "val_acc": 77.13,
+  "best_val_acc": 77.13,
+  "best_epoch": 3,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 77.1300 at epoch 3 | no_improve=0/10
+
+[swin] Epoch 4/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 4,
+  "train_loss": 0.289367,
+  "train_acc": 88.5035,
+  "val_loss": 0.42429,
+  "val_acc": 88.3408,
+  "best_val_acc": 88.3408,
+  "best_epoch": 4,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 88.3408 at epoch 4 | no_improve=0/10
+
+[swin] Epoch 5/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 5,
+  "train_loss": 0.210769,
+  "train_acc": 90.7514,
+  "val_loss": 0.504238,
+  "val_acc": 86.5471,
+  "best_val_acc": 88.3408,
+  "best_epoch": 4,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[swin] Best val_acc so far: 88.3408 at epoch 4 | no_improve=1/10
+
+[swin] Epoch 6/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 6,
+  "train_loss": 0.185145,
+  "train_acc": 92.9351,
+  "val_loss": 0.790264,
+  "val_acc": 87.8924,
+  "best_val_acc": 88.3408,
+  "best_epoch": 4,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[swin] Best val_acc so far: 88.3408 at epoch 4 | no_improve=2/10
+
+[swin] Epoch 7/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 7,
+  "train_loss": 0.239145,
+  "train_acc": 91.4579,
+  "val_loss": 0.392249,
+  "val_acc": 90.583,
+  "best_val_acc": 90.583,
+  "best_epoch": 7,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 90.5830 at epoch 7 | no_improve=0/10
+
+[swin] Epoch 8/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 8,
+  "train_loss": 0.157385,
+  "train_acc": 93.8343,
+  "val_loss": 0.457594,
+  "val_acc": 89.6861,
+  "best_val_acc": 90.583,
+  "best_epoch": 7,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[swin] Best val_acc so far: 90.5830 at epoch 7 | no_improve=1/10
+
+[swin] Epoch 9/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 9,
+  "train_loss": 0.089244,
+  "train_acc": 97.0456,
+  "val_loss": 0.452386,
+  "val_acc": 91.4798,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=0/10
+
+[swin] Epoch 10/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 10,
+  "train_loss": 0.04723,
+  "train_acc": 97.6879,
+  "val_loss": 0.591923,
+  "val_acc": 91.0314,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=1/10
+
+[swin] Epoch 11/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 11,
+  "train_loss": 0.046399,
+  "train_acc": 98.1374,
+  "val_loss": 0.699534,
+  "val_acc": 83.4081,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=2/10
+
+[swin] Epoch 12/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 12,
+  "train_loss": 0.126033,
+  "train_acc": 95.0546,
+  "val_loss": 0.605578,
+  "val_acc": 89.6861,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=3/10
+
+[swin] Epoch 13/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 13,
+  "train_loss": 0.069077,
+  "train_acc": 98.2659,
+  "val_loss": 0.580321,
+  "val_acc": 90.583,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=4/10
+
+[swin] Epoch 14/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 14,
+  "train_loss": 0.063134,
+  "train_acc": 97.5594,
+  "val_loss": 0.552432,
+  "val_acc": 88.7892,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=5/10
+
+[swin] Epoch 15/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 15,
+  "train_loss": 0.036148,
+  "train_acc": 98.1374,
+  "val_loss": 0.77206,
+  "val_acc": 90.1345,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=6/10
+
+[swin] Epoch 16/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 16,
+  "train_loss": 0.015395,
+  "train_acc": 99.3577,
+  "val_loss": 0.750453,
+  "val_acc": 89.6861,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=7/10
+
+[swin] Epoch 17/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 17,
+  "train_loss": 0.012522,
+  "train_acc": 99.6146,
+  "val_loss": 0.861226,
+  "val_acc": 91.4798,
+  "best_val_acc": 91.4798,
+  "best_epoch": 9,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[swin] Best val_acc so far: 91.4798 at epoch 9 | no_improve=8/10
+
+[swin] Epoch 18/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 18,
+  "train_loss": 0.004031,
+  "train_acc": 99.9358,
+  "val_loss": 0.858885,
+  "val_acc": 92.3767,
+  "best_val_acc": 92.3767,
+  "best_epoch": 18,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 92.3767 at epoch 18 | no_improve=0/10
+
+[swin] Epoch 19/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 19,
+  "train_loss": 0.026525,
+  "train_acc": 99.1008,
+  "val_loss": 1.031841,
+  "val_acc": 91.9283,
+  "best_val_acc": 92.3767,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[swin] Best val_acc so far: 92.3767 at epoch 18 | no_improve=1/10
+
+[swin] Epoch 20/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 20,
+  "train_loss": 0.049953,
+  "train_acc": 98.3301,
+  "val_loss": 0.722212,
+  "val_acc": 88.3408,
+  "best_val_acc": 92.3767,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[swin] Best val_acc so far: 92.3767 at epoch 18 | no_improve=2/10
+
+[swin] Epoch 21/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 21,
+  "train_loss": 0.031992,
+  "train_acc": 98.3301,
+  "val_loss": 0.62808,
+  "val_acc": 85.6502,
+  "best_val_acc": 92.3767,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[swin] Best val_acc so far: 92.3767 at epoch 18 | no_improve=3/10
+
+[swin] Epoch 22/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 22,
+  "train_loss": 0.043578,
+  "train_acc": 98.3301,
+  "val_loss": 0.881093,
+  "val_acc": 87.4439,
+  "best_val_acc": 92.3767,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[swin] Best val_acc so far: 92.3767 at epoch 18 | no_improve=4/10
+
+[swin] Epoch 23/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 23,
+  "train_loss": 0.043492,
+  "train_acc": 98.4586,
+  "val_loss": 0.669927,
+  "val_acc": 91.9283,
+  "best_val_acc": 92.3767,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[swin] Best val_acc so far: 92.3767 at epoch 18 | no_improve=5/10
+
+[swin] Epoch 24/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 24,
+  "train_loss": 0.010859,
+  "train_acc": 99.5504,
+  "val_loss": 0.795301,
+  "val_acc": 93.722,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=0/10
+
+[swin] Epoch 25/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 25,
+  "train_loss": 0.008126,
+  "train_acc": 99.6146,
+  "val_loss": 0.793229,
+  "val_acc": 91.9283,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=1/10
+
+[swin] Epoch 26/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 26,
+  "train_loss": 0.013116,
+  "train_acc": 99.5504,
+  "val_loss": 0.738409,
+  "val_acc": 91.4798,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=2/10
+
+[swin] Epoch 27/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 27,
+  "train_loss": 0.007022,
+  "train_acc": 99.7431,
+  "val_loss": 0.837396,
+  "val_acc": 92.8251,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=3/10
+
+[swin] Epoch 28/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 28,
+  "train_loss": 0.017543,
+  "train_acc": 99.422,
+  "val_loss": 1.001971,
+  "val_acc": 91.0314,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=4/10
+
+[swin] Epoch 29/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 29,
+  "train_loss": 0.009726,
+  "train_acc": 99.5504,
+  "val_loss": 0.824085,
+  "val_acc": 89.2377,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=5/10
+
+[swin] Epoch 30/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 30,
+  "train_loss": 0.004434,
+  "train_acc": 99.6789,
+  "val_loss": 0.971908,
+  "val_acc": 91.4798,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=6/10
+
+[swin] Epoch 31/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 31,
+  "train_loss": 0.000972,
+  "train_acc": 100.0,
+  "val_loss": 0.920804,
+  "val_acc": 91.9283,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=7/10
+
+[swin] Epoch 32/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 32,
+  "train_loss": 0.000875,
+  "train_acc": 99.9358,
+  "val_loss": 0.929661,
+  "val_acc": 91.9283,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=8/10
+
+[swin] Epoch 33/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 33,
+  "train_loss": 0.000695,
+  "train_acc": 100.0,
+  "val_loss": 0.9596,
+  "val_acc": 92.8251,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=9/10
+
+[swin] Epoch 34/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 34,
+  "train_loss": 0.000364,
+  "train_acc": 100.0,
+  "val_loss": 0.97311,
+  "val_acc": 92.8251,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=10/10
+[swin] Early stopping triggered at epoch 34. Best val_acc=93.7220 at epoch 24.
+
+====================================================================================================
+TRAIN CLASSIFIER: convnext
+====================================================================================================
+{
+  "cls_image_size": 224,
+  "cls_imagenet_normalize": true,
+  "cls_mask_background_alpha": 0.2,
+  "cls_mask_blur_kernel": 7,
+  "cls_early_stopping_patience": 10,
+  "cls_early_stopping_min_delta": 0.0001,
+  "cls_use_class_weights": true,
+  "cls_use_weighted_sampler": false,
+  "class_weights": {
+    "Adenocarcinoma": 0.4667,
+    "High-grade IN": 1.9962,
+    "Low-grade IN": 0.5831,
+    "Normal": 4.8056,
+    "Polyp": 0.7816,
+    "Serrated adenoma": 6.4875
+  }
+}
+
+[convnext] Epoch 1/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 1,
+  "train_loss": 0.969239,
+  "train_acc": 68.3365,
+  "val_loss": 0.558662,
+  "val_acc": 75.3363,
+  "best_val_acc": 75.3363,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 75.3363 at epoch 1 | no_improve=0/10
+
+[convnext] Epoch 2/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 2,
+  "train_loss": 0.40689,
+  "train_acc": 84.3931,
+  "val_loss": 0.657254,
+  "val_acc": 84.3049,
+  "best_val_acc": 84.3049,
+  "best_epoch": 2,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 84.3049 at epoch 2 | no_improve=0/10
+
+[convnext] Epoch 3/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 3,
+  "train_loss": 0.250882,
+  "train_acc": 91.201,
+  "val_loss": 0.519675,
+  "val_acc": 89.2377,
+  "best_val_acc": 89.2377,
+  "best_epoch": 3,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 89.2377 at epoch 3 | no_improve=0/10
+
+[convnext] Epoch 4/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 4,
+  "train_loss": 0.126701,
+  "train_acc": 95.5684,
+  "val_loss": 0.464425,
+  "val_acc": 80.2691,
+  "best_val_acc": 89.2377,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[convnext] Best val_acc so far: 89.2377 at epoch 3 | no_improve=1/10
+
+[convnext] Epoch 5/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 5,
+  "train_loss": 0.081468,
+  "train_acc": 96.5318,
+  "val_loss": 0.588501,
+  "val_acc": 88.3408,
+  "best_val_acc": 89.2377,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[convnext] Best val_acc so far: 89.2377 at epoch 3 | no_improve=2/10
+
+[convnext] Epoch 6/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 6,
+  "train_loss": 0.065533,
+  "train_acc": 97.2383,
+  "val_loss": 0.47045,
+  "val_acc": 87.4439,
+  "best_val_acc": 89.2377,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[convnext] Best val_acc so far: 89.2377 at epoch 3 | no_improve=3/10
+
+[convnext] Epoch 7/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 7,
+  "train_loss": 0.045566,
+  "train_acc": 98.5228,
+  "val_loss": 0.593015,
+  "val_acc": 90.1345,
+  "best_val_acc": 90.1345,
+  "best_epoch": 7,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 90.1345 at epoch 7 | no_improve=0/10
+
+[convnext] Epoch 8/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 8,
+  "train_loss": 0.064177,
+  "train_acc": 97.5594,
+  "val_loss": 1.042331,
+  "val_acc": 87.8924,
+  "best_val_acc": 90.1345,
+  "best_epoch": 7,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[convnext] Best val_acc so far: 90.1345 at epoch 7 | no_improve=1/10
+
+[convnext] Epoch 9/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 9,
+  "train_loss": 0.030403,
+  "train_acc": 98.7797,
+  "val_loss": 0.605227,
+  "val_acc": 91.0314,
+  "best_val_acc": 91.0314,
+  "best_epoch": 9,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 91.0314 at epoch 9 | no_improve=0/10
+
+[convnext] Epoch 10/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 10,
+  "train_loss": 0.012537,
+  "train_acc": 99.5504,
+  "val_loss": 0.51167,
+  "val_acc": 92.3767,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=0/10
+
+[convnext] Epoch 11/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 11,
+  "train_loss": 0.017331,
+  "train_acc": 99.5504,
+  "val_loss": 0.594298,
+  "val_acc": 86.0987,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=1/10
+
+[convnext] Epoch 12/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 12,
+  "train_loss": 0.028146,
+  "train_acc": 99.1008,
+  "val_loss": 0.66361,
+  "val_acc": 88.7892,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=2/10
+
+[convnext] Epoch 13/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 13,
+  "train_loss": 0.011083,
+  "train_acc": 99.6146,
+  "val_loss": 0.626215,
+  "val_acc": 91.0314,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=3/10
+
+[convnext] Epoch 14/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 14,
+  "train_loss": 0.00731,
+  "train_acc": 99.8073,
+  "val_loss": 0.671646,
+  "val_acc": 91.9283,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=4/10
+
+[convnext] Epoch 15/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 15,
+  "train_loss": 0.001967,
+  "train_acc": 100.0,
+  "val_loss": 0.644552,
+  "val_acc": 91.0314,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=5/10
+
+[convnext] Epoch 16/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 16,
+  "train_loss": 0.001283,
+  "train_acc": 100.0,
+  "val_loss": 0.769137,
+  "val_acc": 91.0314,
+  "best_val_acc": 92.3767,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[convnext] Best val_acc so far: 92.3767 at epoch 10 | no_improve=6/10
+
+[convnext] Epoch 17/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 17,
+  "train_loss": 0.000935,
+  "train_acc": 100.0,
+  "val_loss": 0.662096,
+  "val_acc": 93.2735,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=0/10
+
+[convnext] Epoch 18/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 18,
+  "train_loss": 0.006315,
+  "train_acc": 99.6789,
+  "val_loss": 0.822485,
+  "val_acc": 90.583,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=1/10
+
+[convnext] Epoch 19/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 19,
+  "train_loss": 0.007417,
+  "train_acc": 99.8073,
+  "val_loss": 0.616679,
+  "val_acc": 89.6861,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=2/10
+
+[convnext] Epoch 20/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 20,
+  "train_loss": 0.001415,
+  "train_acc": 100.0,
+  "val_loss": 0.590688,
+  "val_acc": 92.3767,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=3/10
+
+[convnext] Epoch 21/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 21,
+  "train_loss": 0.000838,
+  "train_acc": 100.0,
+  "val_loss": 0.598772,
+  "val_acc": 92.3767,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=4/10
+
+[convnext] Epoch 22/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 22,
+  "train_loss": 0.000608,
+  "train_acc": 100.0,
+  "val_loss": 0.627282,
+  "val_acc": 91.9283,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=5/10
+
+[convnext] Epoch 23/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 23,
+  "train_loss": 0.00041,
+  "train_acc": 100.0,
+  "val_loss": 0.651001,
+  "val_acc": 91.9283,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=6/10
+
+[convnext] Epoch 24/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 24,
+  "train_loss": 0.000421,
+  "train_acc": 100.0,
+  "val_loss": 0.667002,
+  "val_acc": 91.4798,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=7/10
+
+[convnext] Epoch 25/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 25,
+  "train_loss": 0.000439,
+  "train_acc": 100.0,
+  "val_loss": 0.63759,
+  "val_acc": 92.8251,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=8/10
+
+[convnext] Epoch 26/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 26,
+  "train_loss": 0.000362,
+  "train_acc": 100.0,
+  "val_loss": 0.659611,
+  "val_acc": 92.3767,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=9/10
+
+[convnext] Epoch 27/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 27,
+  "train_loss": 0.001098,
+  "train_acc": 99.9358,
+  "val_loss": 0.744935,
+  "val_acc": 91.4798,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=10/10
+[convnext] Early stopping triggered at epoch 27. Best val_acc=93.2735 at epoch 17.
+
+====================================================================================================
+EVALUATE CLASSIFIERS
+====================================================================================================
+Test vit: 100%
+Test swin: 100%
+Test convnext: 100%
+{
+  "ensemble_selection_metric": "weighted_f1",
+  "selected_ensemble": "Ensemble (Stacking LogReg)",
+  "candidates": [
+    {
+      "name": "Ensemble (Weighted Avg - Equal)",
+      "kind": "weighted_avg",
+      "val_score": 0.924832,
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    {
+      "name": "Ensemble (Weighted Avg)",
+      "kind": "weighted_avg",
+      "val_score": 0.932815,
+      "weights": [
+        0.0,
+        0.8,
+        0.19999999999999996
+      ]
+    },
+    {
+      "name": "Ensemble (Majority Voting)",
+      "kind": "majority_vote",
+      "val_score": 0.933781,
+      "weights": null
+    },
+    {
+      "name": "Ensemble (Stacking LogReg)",
+      "kind": "stacking_logreg",
+      "val_score": 0.944943,
+      "weights": null
+    }
+  ]
+}
+
+====================================================================================================
+DONE
+====================================================================================================
+Everything saved under: results2/paper_run
+Key outputs:
+- Log: results2/paper_run/logs/run_log.txt
+- Table 2 run: results2/paper_run/results/tables/table2_run_all_models.csv
+- Table 3 run: results2/paper_run/results/tables/table3_run.csv
+- Figure 3: results2/paper_run/results/plots/figure3_preprocessing.png
+- Figure 5: results2/paper_run/results/plots/figure5_accuracy_vs_epoch.png
+- Figure 6: results2/paper_run/results/plots/figure6_roc_comparison.png
+
+====================================================================================================
+ENVIRONMENT
+====================================================================================================
+Started: 2026-04-22 20:25:12
+Torch: 2.11.0+cu130
+CUDA device count: 1
+GPU 0: NVIDIA RTX PRO 4500 Blackwell | 31.37 GB
+
+====================================================================================================
+DATASET SCAN
+====================================================================================================
+Adenocarcinoma       | images= 795 | labels= 795 | paired= 795 | dropped_img=  0 | dropped_lbl=  0
+High-grade IN        | images= 186 | labels= 186 | paired= 186 | dropped_img=  0 | dropped_lbl=  0
+Low-grade IN         | images= 637 | labels= 637 | paired= 637 | dropped_img=  0 | dropped_lbl=  0
+Normal               | images=  76 | labels=  76 | paired=  76 | dropped_img=  0 | dropped_lbl=  0
+Polyp                | images= 474 | labels= 474 | paired= 474 | dropped_img=  0 | dropped_lbl=  0
+Serrated adenoma     | images=  58 | labels=  58 | paired=  58 | dropped_img=  0 | dropped_lbl=  0
+Total image/mask pairs found: 2226
+
+====================================================================================================
+WARMUP DECODE CACHE
+====================================================================================================
+Caching RGB decodes: 100%
+Caching mask decodes: 100%
+RGB cache files: 2226
+Mask cache files: 4452
+
+====================================================================================================
+DATA SPLITS
+====================================================================================================
+train: 1557
+class_display
+Adenocarcinoma      556
+High-grade IN       130
+Low-grade IN        445
+Normal               54
+Polyp               332
+Serrated adenoma     40
+val  : 223
+class_display
+Adenocarcinoma      80
+High-grade IN       19
+Low-grade IN        64
+Normal               7
+Polyp               47
+Serrated adenoma     6
+test : 446
+class_display
+Adenocarcinoma      159
+High-grade IN        37
+Low-grade IN        128
+Normal               15
+Polyp                95
+Serrated adenoma     12
+
+====================================================================================================
+TRAIN PROPOSED SEGMENTATION
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "seg_imagenet_normalize": true,
+  "seg_lambda_gan": 0.25,
+  "seg_lambda_dice": 1.0,
+  "seg_lambda_bce": 0.2,
+  "seg_lambda_boundary": 0.1,
+  "seg_disc_lr": 0.0001,
+  "seg_disc_update_interval": 2,
+  "seg_early_stopping_patience": 20,
+  "seg_early_stopping_min_delta": 0.0001,
+  "seg_eval_tta": true,
+  "seg_tune_inference_on_val": true
+}
+Resuming proposed segmentation from epoch 30
+
+[Proposed Seg] Epoch 31/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 31,
+  "train_loss_g": 0.35205,
+  "train_loss_d": 0.679874,
+  "train_dice": 0.961475,
+  "val_loss_g": 0.439205,
+  "val_loss_d": 0.68917,
+  "val_dice": 0.94819,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 21
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=21/20
+[Proposed Seg] Early stopping triggered at epoch 31. Best val_dice=0.949307 at epoch 10.
+Tuning seg inference proposed_methodology: 100%
+{
+  "model_name": "proposed_methodology",
+  "selected_threshold": 0.55,
+  "selected_close_kernel": 0,
+  "selected_open_kernel": 3,
+  "selection_score": 0.898061,
+  "summary": {
+    "Dice": 0.953105,
+    "Jaccard": 0.913684,
+    "BF-score": 0.823629,
+    "HOG-sim": 0.805201
+  }
+}
+
+====================================================================================================
+EVALUATE SEGMENTATION: Proposed Methodology
+====================================================================================================
+Evaluating Proposed Methodology: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: train
+====================================================================================================
+Generating masks train: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: val
+====================================================================================================
+Generating masks val: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: test
+====================================================================================================
+Generating masks test: 100%
+
+====================================================================================================
+TRAIN BASELINE SEGMENTATION: U-Net
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "baseline_seg_early_stopping_patience": 20,
+  "baseline_seg_early_stopping_min_delta": 0.0001
+}
+
+[U-Net] Epoch 1/100
+train baseline seg: 100%
+Traceback (most recent call last):
+  File "/home/mht/DL PROJECT/gr_hdunet_reproduction.py", line 3182, in <module>
+    main()
+  File "/home/mht/DL PROJECT/gr_hdunet_reproduction.py", line 3138, in main
+    unet, unet_inference_cfg = train_baseline_segmentation("U-Net", UNetBaseline(), splits["train"], splits["val"], device)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mht/DL PROJECT/gr_hdunet_reproduction.py", line 2168, in train_baseline_segmentation
+    train_stats = run_seg_epoch_baseline(model, train_loader, optimizer, scaler, device, train=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mht/DL PROJECT/gr_hdunet_reproduction.py", line 2088, in run_seg_epoch_baseline
+    loss = criterion_bce(preds, masks) + criterion_dice(preds, masks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mht/miniconda3/envs/dl_proj/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mht/miniconda3/envs/dl_proj/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mht/miniconda3/envs/dl_proj/lib/python3.12/site-packages/torch/nn/modules/loss.py", line 710, in forward
+    return F.binary_cross_entropy(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mht/miniconda3/envs/dl_proj/lib/python3.12/site-packages/torch/nn/functional.py", line 3574, in binary_cross_entropy
+    return torch._C._nn.binary_cross_entropy(input, target, weight, reduction_enum)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: torch.nn.functional.binary_cross_entropy and torch.nn.BCELoss are unsafe to autocast.
+Many models use a sigmoid layer right before the binary cross entropy layer.
+In this case, combine the two layers using torch.nn.functional.binary_cross_entropy_with_logits
+or torch.nn.BCEWithLogitsLoss.  binary_cross_entropy_with_logits and BCEWithLogits are
+safe to autocast.
+runtime_check_skipped:no_cuda
+import_ok True True
+train baseline seg: 100%
+val baseline seg: 100%
+baseline_ok 1.147215 0.0
+train proposed seg: 100%
+val proposed seg: 100%
+proposed_ok 0.736976 0.65489
+train cls: 100%
+val cls: 100%
+cls_ok 6.319227 50.0 (6, 6)
+
+====================================================================================================
+ENVIRONMENT
+====================================================================================================
+Started: 2026-04-22 20:38:24
+Torch: 2.11.0+cu130
+CUDA device count: 1
+GPU 0: NVIDIA RTX PRO 4500 Blackwell | 31.37 GB
+
+====================================================================================================
+DATASET SCAN
+====================================================================================================
+Adenocarcinoma       | images= 795 | labels= 795 | paired= 795 | dropped_img=  0 | dropped_lbl=  0
+High-grade IN        | images= 186 | labels= 186 | paired= 186 | dropped_img=  0 | dropped_lbl=  0
+Low-grade IN         | images= 637 | labels= 637 | paired= 637 | dropped_img=  0 | dropped_lbl=  0
+Normal               | images=  76 | labels=  76 | paired=  76 | dropped_img=  0 | dropped_lbl=  0
+Polyp                | images= 474 | labels= 474 | paired= 474 | dropped_img=  0 | dropped_lbl=  0
+Serrated adenoma     | images=  58 | labels=  58 | paired=  58 | dropped_img=  0 | dropped_lbl=  0
+Total image/mask pairs found: 2226
+
+====================================================================================================
+WARMUP DECODE CACHE
+====================================================================================================
+Caching RGB decodes: 100%
+Caching mask decodes: 100%
+RGB cache files: 2226
+Mask cache files: 4452
+
+====================================================================================================
+DATA SPLITS
+====================================================================================================
+train: 1557
+class_display
+Adenocarcinoma      556
+High-grade IN       130
+Low-grade IN        445
+Normal               54
+Polyp               332
+Serrated adenoma     40
+val  : 223
+class_display
+Adenocarcinoma      80
+High-grade IN       19
+Low-grade IN        64
+Normal               7
+Polyp               47
+Serrated adenoma     6
+test : 446
+class_display
+Adenocarcinoma      159
+High-grade IN        37
+Low-grade IN        128
+Normal               15
+Polyp                95
+Serrated adenoma     12
+
+====================================================================================================
+TRAIN PROPOSED SEGMENTATION
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "seg_imagenet_normalize": true,
+  "seg_lambda_gan": 0.25,
+  "seg_lambda_dice": 1.0,
+  "seg_lambda_bce": 0.2,
+  "seg_lambda_boundary": 0.1,
+  "seg_disc_lr": 0.0001,
+  "seg_disc_update_interval": 2,
+  "seg_early_stopping_patience": 20,
+  "seg_early_stopping_min_delta": 0.0001,
+  "seg_eval_tta": true,
+  "seg_tune_inference_on_val": true
+}
+Resuming proposed segmentation from epoch 31
+
+[Proposed Seg] Epoch 32/100
+train proposed seg: 100%
+val proposed seg: 100%
+{
+  "epoch": 32,
+  "train_loss_g": 0.336635,
+  "train_loss_d": 0.679446,
+  "train_dice": 0.961623,
+  "val_loss_g": 0.290599,
+  "val_loss_d": 0.766266,
+  "val_dice": 0.949275,
+  "best_val_dice": 0.949307,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 22
+}
+[Proposed Seg] Best val_dice so far: 0.949307 at epoch 10 | no_improve=22/20
+[Proposed Seg] Early stopping triggered at epoch 32. Best val_dice=0.949307 at epoch 10.
+Tuning seg inference proposed_methodology: 100%
+{
+  "model_name": "proposed_methodology",
+  "selected_threshold": 0.55,
+  "selected_close_kernel": 0,
+  "selected_open_kernel": 3,
+  "selection_score": 0.89806,
+  "summary": {
+    "Dice": 0.953103,
+    "Jaccard": 0.913681,
+    "BF-score": 0.823628,
+    "HOG-sim": 0.805205
+  }
+}
+
+====================================================================================================
+EVALUATE SEGMENTATION: Proposed Methodology
+====================================================================================================
+Evaluating Proposed Methodology: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: train
+====================================================================================================
+Generating masks train: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: val
+====================================================================================================
+Generating masks val: 100%
+
+====================================================================================================
+GENERATE REFINED MASKS: test
+====================================================================================================
+Generating masks test: 100%
+
+====================================================================================================
+TRAIN BASELINE SEGMENTATION: U-Net
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "baseline_seg_early_stopping_patience": 20,
+  "baseline_seg_early_stopping_min_delta": 0.0001
+}
+
+[U-Net] Epoch 1/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 1,
+  "train_loss": 0.462251,
+  "train_dice": 0.885926,
+  "val_loss": 0.41723,
+  "val_dice": 0.909224,
+  "best_val_dice": 0.909224,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.909224 at epoch 1 | no_improve=0/20
+
+[U-Net] Epoch 2/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 2,
+  "train_loss": 0.335941,
+  "train_dice": 0.922329,
+  "val_loss": 0.297091,
+  "val_dice": 0.932039,
+  "best_val_dice": 0.932039,
+  "best_epoch": 2,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.932039 at epoch 2 | no_improve=0/20
+
+[U-Net] Epoch 3/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 3,
+  "train_loss": 0.297656,
+  "train_dice": 0.929872,
+  "val_loss": 0.264248,
+  "val_dice": 0.937049,
+  "best_val_dice": 0.937049,
+  "best_epoch": 3,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.937049 at epoch 3 | no_improve=0/20
+
+[U-Net] Epoch 4/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 4,
+  "train_loss": 0.270935,
+  "train_dice": 0.935176,
+  "val_loss": 0.270589,
+  "val_dice": 0.933402,
+  "best_val_dice": 0.937049,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[U-Net] Best val_dice so far: 0.937049 at epoch 3 | no_improve=1/20
+
+[U-Net] Epoch 5/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 5,
+  "train_loss": 0.265784,
+  "train_dice": 0.935362,
+  "val_loss": 0.257949,
+  "val_dice": 0.931887,
+  "best_val_dice": 0.937049,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[U-Net] Best val_dice so far: 0.937049 at epoch 3 | no_improve=2/20
+
+[U-Net] Epoch 6/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 6,
+  "train_loss": 0.246566,
+  "train_dice": 0.940207,
+  "val_loss": 0.223113,
+  "val_dice": 0.94568,
+  "best_val_dice": 0.94568,
+  "best_epoch": 6,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.945680 at epoch 6 | no_improve=0/20
+
+[U-Net] Epoch 7/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 7,
+  "train_loss": 0.241444,
+  "train_dice": 0.940512,
+  "val_loss": 0.223495,
+  "val_dice": 0.943028,
+  "best_val_dice": 0.94568,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[U-Net] Best val_dice so far: 0.945680 at epoch 6 | no_improve=1/20
+
+[U-Net] Epoch 8/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 8,
+  "train_loss": 0.229334,
+  "train_dice": 0.943272,
+  "val_loss": 0.225205,
+  "val_dice": 0.942014,
+  "best_val_dice": 0.94568,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[U-Net] Best val_dice so far: 0.945680 at epoch 6 | no_improve=2/20
+
+[U-Net] Epoch 9/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 9,
+  "train_loss": 0.22869,
+  "train_dice": 0.942879,
+  "val_loss": 0.221952,
+  "val_dice": 0.942946,
+  "best_val_dice": 0.94568,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[U-Net] Best val_dice so far: 0.945680 at epoch 6 | no_improve=3/20
+
+[U-Net] Epoch 10/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 10,
+  "train_loss": 0.226862,
+  "train_dice": 0.943409,
+  "val_loss": 0.223654,
+  "val_dice": 0.942787,
+  "best_val_dice": 0.94568,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[U-Net] Best val_dice so far: 0.945680 at epoch 6 | no_improve=4/20
+
+[U-Net] Epoch 11/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 11,
+  "train_loss": 0.21869,
+  "train_dice": 0.945654,
+  "val_loss": 0.205913,
+  "val_dice": 0.946608,
+  "best_val_dice": 0.946608,
+  "best_epoch": 11,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.946608 at epoch 11 | no_improve=0/20
+
+[U-Net] Epoch 12/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 12,
+  "train_loss": 0.209643,
+  "train_dice": 0.947629,
+  "val_loss": 0.219985,
+  "val_dice": 0.94188,
+  "best_val_dice": 0.946608,
+  "best_epoch": 11,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[U-Net] Best val_dice so far: 0.946608 at epoch 11 | no_improve=1/20
+
+[U-Net] Epoch 13/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 13,
+  "train_loss": 0.211788,
+  "train_dice": 0.947038,
+  "val_loss": 0.203735,
+  "val_dice": 0.946558,
+  "best_val_dice": 0.946608,
+  "best_epoch": 11,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[U-Net] Best val_dice so far: 0.946608 at epoch 11 | no_improve=2/20
+
+[U-Net] Epoch 14/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 14,
+  "train_loss": 0.209713,
+  "train_dice": 0.94742,
+  "val_loss": 0.241767,
+  "val_dice": 0.935052,
+  "best_val_dice": 0.946608,
+  "best_epoch": 11,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[U-Net] Best val_dice so far: 0.946608 at epoch 11 | no_improve=3/20
+
+[U-Net] Epoch 15/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 15,
+  "train_loss": 0.205956,
+  "train_dice": 0.948361,
+  "val_loss": 0.205489,
+  "val_dice": 0.946526,
+  "best_val_dice": 0.946608,
+  "best_epoch": 11,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[U-Net] Best val_dice so far: 0.946608 at epoch 11 | no_improve=4/20
+
+[U-Net] Epoch 16/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 16,
+  "train_loss": 0.207198,
+  "train_dice": 0.948125,
+  "val_loss": 0.204779,
+  "val_dice": 0.947107,
+  "best_val_dice": 0.947107,
+  "best_epoch": 16,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.947107 at epoch 16 | no_improve=0/20
+
+[U-Net] Epoch 17/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 17,
+  "train_loss": 0.195451,
+  "train_dice": 0.950823,
+  "val_loss": 0.192183,
+  "val_dice": 0.949584,
+  "best_val_dice": 0.949584,
+  "best_epoch": 17,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.949584 at epoch 17 | no_improve=0/20
+
+[U-Net] Epoch 18/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 18,
+  "train_loss": 0.198022,
+  "train_dice": 0.950352,
+  "val_loss": 0.212261,
+  "val_dice": 0.94558,
+  "best_val_dice": 0.949584,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[U-Net] Best val_dice so far: 0.949584 at epoch 17 | no_improve=1/20
+
+[U-Net] Epoch 19/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 19,
+  "train_loss": 0.202971,
+  "train_dice": 0.949185,
+  "val_loss": 0.200781,
+  "val_dice": 0.949388,
+  "best_val_dice": 0.949584,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[U-Net] Best val_dice so far: 0.949584 at epoch 17 | no_improve=2/20
+
+[U-Net] Epoch 20/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 20,
+  "train_loss": 0.196667,
+  "train_dice": 0.950744,
+  "val_loss": 0.196483,
+  "val_dice": 0.948116,
+  "best_val_dice": 0.949584,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[U-Net] Best val_dice so far: 0.949584 at epoch 17 | no_improve=3/20
+
+[U-Net] Epoch 21/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 21,
+  "train_loss": 0.190174,
+  "train_dice": 0.952308,
+  "val_loss": 0.20717,
+  "val_dice": 0.946494,
+  "best_val_dice": 0.949584,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[U-Net] Best val_dice so far: 0.949584 at epoch 17 | no_improve=4/20
+
+[U-Net] Epoch 22/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 22,
+  "train_loss": 0.185471,
+  "train_dice": 0.953451,
+  "val_loss": 0.20251,
+  "val_dice": 0.946434,
+  "best_val_dice": 0.949584,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[U-Net] Best val_dice so far: 0.949584 at epoch 17 | no_improve=5/20
+
+[U-Net] Epoch 23/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 23,
+  "train_loss": 0.185447,
+  "train_dice": 0.953344,
+  "val_loss": 0.188016,
+  "val_dice": 0.950949,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=0/20
+
+[U-Net] Epoch 24/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 24,
+  "train_loss": 0.185831,
+  "train_dice": 0.9532,
+  "val_loss": 0.209685,
+  "val_dice": 0.943237,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=1/20
+
+[U-Net] Epoch 25/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 25,
+  "train_loss": 0.187347,
+  "train_dice": 0.952968,
+  "val_loss": 0.189185,
+  "val_dice": 0.949995,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=2/20
+
+[U-Net] Epoch 26/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 26,
+  "train_loss": 0.179052,
+  "train_dice": 0.954817,
+  "val_loss": 0.19181,
+  "val_dice": 0.950821,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=3/20
+
+[U-Net] Epoch 27/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 27,
+  "train_loss": 0.196905,
+  "train_dice": 0.950195,
+  "val_loss": 0.191475,
+  "val_dice": 0.950173,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=4/20
+
+[U-Net] Epoch 28/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 28,
+  "train_loss": 0.179683,
+  "train_dice": 0.954631,
+  "val_loss": 0.200883,
+  "val_dice": 0.947078,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=5/20
+
+[U-Net] Epoch 29/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 29,
+  "train_loss": 0.173398,
+  "train_dice": 0.956404,
+  "val_loss": 0.241963,
+  "val_dice": 0.93579,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=6/20
+
+[U-Net] Epoch 30/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 30,
+  "train_loss": 0.173298,
+  "train_dice": 0.956284,
+  "val_loss": 0.261551,
+  "val_dice": 0.935885,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=7/20
+
+[U-Net] Epoch 31/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 31,
+  "train_loss": 0.17207,
+  "train_dice": 0.95641,
+  "val_loss": 0.229229,
+  "val_dice": 0.93787,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=8/20
+
+[U-Net] Epoch 32/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 32,
+  "train_loss": 0.176463,
+  "train_dice": 0.954954,
+  "val_loss": 0.208992,
+  "val_dice": 0.944674,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=9/20
+
+[U-Net] Epoch 33/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 33,
+  "train_loss": 0.173786,
+  "train_dice": 0.956045,
+  "val_loss": 0.198289,
+  "val_dice": 0.948458,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=10/20
+
+[U-Net] Epoch 34/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 34,
+  "train_loss": 0.178863,
+  "train_dice": 0.954712,
+  "val_loss": 0.197946,
+  "val_dice": 0.948923,
+  "best_val_dice": 0.950949,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[U-Net] Best val_dice so far: 0.950949 at epoch 23 | no_improve=11/20
+
+[U-Net] Epoch 35/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 35,
+  "train_loss": 0.173057,
+  "train_dice": 0.956174,
+  "val_loss": 0.189955,
+  "val_dice": 0.951402,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=0/20
+
+[U-Net] Epoch 36/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 36,
+  "train_loss": 0.171372,
+  "train_dice": 0.956626,
+  "val_loss": 0.220577,
+  "val_dice": 0.942494,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=1/20
+
+[U-Net] Epoch 37/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 37,
+  "train_loss": 0.168561,
+  "train_dice": 0.957484,
+  "val_loss": 0.190658,
+  "val_dice": 0.951125,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=2/20
+
+[U-Net] Epoch 38/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 38,
+  "train_loss": 0.16383,
+  "train_dice": 0.958495,
+  "val_loss": 0.188604,
+  "val_dice": 0.950911,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=3/20
+
+[U-Net] Epoch 39/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 39,
+  "train_loss": 0.168944,
+  "train_dice": 0.957344,
+  "val_loss": 0.187201,
+  "val_dice": 0.951281,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=4/20
+
+[U-Net] Epoch 40/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 40,
+  "train_loss": 0.160129,
+  "train_dice": 0.959442,
+  "val_loss": 0.199986,
+  "val_dice": 0.948172,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=5/20
+
+[U-Net] Epoch 41/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 41,
+  "train_loss": 0.162645,
+  "train_dice": 0.959113,
+  "val_loss": 0.311816,
+  "val_dice": 0.928347,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=6/20
+
+[U-Net] Epoch 42/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 42,
+  "train_loss": 0.182627,
+  "train_dice": 0.957019,
+  "val_loss": 64.650976,
+  "val_dice": 0.0,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=7/20
+
+[U-Net] Epoch 43/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 43,
+  "train_loss": 0.30172,
+  "train_dice": 0.93296,
+  "val_loss": 1.440117,
+  "val_dice": 0.413726,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=8/20
+
+[U-Net] Epoch 44/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 44,
+  "train_loss": 0.310431,
+  "train_dice": 0.934976,
+  "val_loss": 2.074352,
+  "val_dice": 0.675303,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=9/20
+
+[U-Net] Epoch 45/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 45,
+  "train_loss": 0.493935,
+  "train_dice": 0.886552,
+  "val_loss": 0.516598,
+  "val_dice": 0.877914,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=10/20
+
+[U-Net] Epoch 46/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 46,
+  "train_loss": 0.487675,
+  "train_dice": 0.884659,
+  "val_loss": 0.4899,
+  "val_dice": 0.884834,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=11/20
+
+[U-Net] Epoch 47/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 47,
+  "train_loss": 0.485771,
+  "train_dice": 0.888352,
+  "val_loss": 0.491054,
+  "val_dice": 0.88873,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 12
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=12/20
+
+[U-Net] Epoch 48/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 48,
+  "train_loss": 0.492601,
+  "train_dice": 0.888178,
+  "val_loss": 0.495289,
+  "val_dice": 0.892307,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 13
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=13/20
+
+[U-Net] Epoch 49/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 49,
+  "train_loss": 0.503604,
+  "train_dice": 0.889405,
+  "val_loss": 0.512791,
+  "val_dice": 0.889821,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 14
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=14/20
+
+[U-Net] Epoch 50/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 50,
+  "train_loss": 0.510878,
+  "train_dice": 0.889542,
+  "val_loss": 0.513508,
+  "val_dice": 0.890763,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 15
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=15/20
+
+[U-Net] Epoch 51/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 51,
+  "train_loss": 0.51687,
+  "train_dice": 0.889494,
+  "val_loss": 0.5194,
+  "val_dice": 0.892705,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 16
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=16/20
+
+[U-Net] Epoch 52/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 52,
+  "train_loss": 0.521641,
+  "train_dice": 0.890827,
+  "val_loss": 0.525185,
+  "val_dice": 0.893499,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 17
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=17/20
+
+[U-Net] Epoch 53/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 53,
+  "train_loss": 0.525279,
+  "train_dice": 0.89038,
+  "val_loss": 0.532102,
+  "val_dice": 0.888716,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 18
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=18/20
+
+[U-Net] Epoch 54/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 54,
+  "train_loss": 0.526628,
+  "train_dice": 0.890629,
+  "val_loss": 0.532175,
+  "val_dice": 0.889281,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 19
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=19/20
+
+[U-Net] Epoch 55/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 55,
+  "train_loss": 0.529647,
+  "train_dice": 0.891344,
+  "val_loss": 0.538304,
+  "val_dice": 0.890437,
+  "best_val_dice": 0.951402,
+  "best_epoch": 35,
+  "improved": false,
+  "epochs_without_improvement": 20
+}
+[U-Net] Best val_dice so far: 0.951402 at epoch 35 | no_improve=20/20
+[U-Net] Early stopping triggered at epoch 55. Best val_dice=0.951402 at epoch 35.
+Tuning seg inference u_net: 100%
+{
+  "model_name": "u_net",
+  "selected_threshold": 0.55,
+  "selected_close_kernel": 0,
+  "selected_open_kernel": 0,
+  "selection_score": 0.896855,
+  "summary": {
+    "Dice": 0.951963,
+    "Jaccard": 0.91245,
+    "BF-score": 0.813122,
+    "HOG-sim": 0.827019
+  }
+}
+
+====================================================================================================
+TRAIN BASELINE SEGMENTATION: SegNet
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "baseline_seg_early_stopping_patience": 20,
+  "baseline_seg_early_stopping_min_delta": 0.0001
+}
+
+[SegNet] Epoch 1/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 1,
+  "train_loss": 0.496424,
+  "train_dice": 0.86639,
+  "val_loss": 0.42322,
+  "val_dice": 0.888987,
+  "best_val_dice": 0.888987,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[SegNet] Best val_dice so far: 0.888987 at epoch 1 | no_improve=0/20
+
+[SegNet] Epoch 2/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 2,
+  "train_loss": 0.370167,
+  "train_dice": 0.904102,
+  "val_loss": 0.436455,
+  "val_dice": 0.893616,
+  "best_val_dice": 0.893616,
+  "best_epoch": 2,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[SegNet] Best val_dice so far: 0.893616 at epoch 2 | no_improve=0/20
+
+[SegNet] Epoch 3/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 3,
+  "train_loss": 0.338478,
+  "train_dice": 0.913609,
+  "val_loss": 0.306786,
+  "val_dice": 0.920805,
+  "best_val_dice": 0.920805,
+  "best_epoch": 3,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[SegNet] Best val_dice so far: 0.920805 at epoch 3 | no_improve=0/20
+
+[SegNet] Epoch 4/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 4,
+  "train_loss": 0.319615,
+  "train_dice": 0.917848,
+  "val_loss": 0.306378,
+  "val_dice": 0.92388,
+  "best_val_dice": 0.92388,
+  "best_epoch": 4,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[SegNet] Best val_dice so far: 0.923880 at epoch 4 | no_improve=0/20
+
+[SegNet] Epoch 5/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 5,
+  "train_loss": 0.305804,
+  "train_dice": 0.922185,
+  "val_loss": 0.295253,
+  "val_dice": 0.927239,
+  "best_val_dice": 0.927239,
+  "best_epoch": 5,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[SegNet] Best val_dice so far: 0.927239 at epoch 5 | no_improve=0/20
+
+[SegNet] Epoch 6/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 6,
+  "train_loss": 0.292471,
+  "train_dice": 0.925804,
+  "val_loss": 0.283755,
+  "val_dice": 0.928018,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=0/20
+
+[SegNet] Epoch 7/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 7,
+  "train_loss": 0.299863,
+  "train_dice": 0.925118,
+  "val_loss": 0.681509,
+  "val_dice": 0.795993,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=1/20
+
+[SegNet] Epoch 8/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 8,
+  "train_loss": 0.513352,
+  "train_dice": 0.89088,
+  "val_loss": 0.553119,
+  "val_dice": 0.890228,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=2/20
+
+[SegNet] Epoch 9/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 9,
+  "train_loss": 0.545663,
+  "train_dice": 0.897768,
+  "val_loss": 0.553548,
+  "val_dice": 0.903029,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=3/20
+
+[SegNet] Epoch 10/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 10,
+  "train_loss": 0.549032,
+  "train_dice": 0.904001,
+  "val_loss": 0.560939,
+  "val_dice": 0.901134,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=4/20
+
+[SegNet] Epoch 11/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 11,
+  "train_loss": 0.555638,
+  "train_dice": 0.903236,
+  "val_loss": 0.572529,
+  "val_dice": 0.902095,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=5/20
+
+[SegNet] Epoch 12/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 12,
+  "train_loss": 0.558158,
+  "train_dice": 0.90046,
+  "val_loss": 0.558968,
+  "val_dice": 0.902296,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=6/20
+
+[SegNet] Epoch 13/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 13,
+  "train_loss": 0.557732,
+  "train_dice": 0.901094,
+  "val_loss": 0.574402,
+  "val_dice": 0.900958,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=7/20
+
+[SegNet] Epoch 14/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 14,
+  "train_loss": 0.558915,
+  "train_dice": 0.901491,
+  "val_loss": 0.583829,
+  "val_dice": 0.902032,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=8/20
+
+[SegNet] Epoch 15/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 15,
+  "train_loss": 0.564926,
+  "train_dice": 0.899487,
+  "val_loss": 0.622404,
+  "val_dice": 0.903815,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=9/20
+
+[SegNet] Epoch 16/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 16,
+  "train_loss": 0.564706,
+  "train_dice": 0.90081,
+  "val_loss": 0.6318,
+  "val_dice": 0.906104,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=10/20
+
+[SegNet] Epoch 17/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 17,
+  "train_loss": 0.577827,
+  "train_dice": 0.891994,
+  "val_loss": 0.579108,
+  "val_dice": 0.90719,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=11/20
+
+[SegNet] Epoch 18/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 18,
+  "train_loss": 0.573372,
+  "train_dice": 0.898089,
+  "val_loss": 0.834779,
+  "val_dice": 0.754393,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 12
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=12/20
+
+[SegNet] Epoch 19/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 19,
+  "train_loss": 0.698528,
+  "train_dice": 0.843389,
+  "val_loss": 0.695074,
+  "val_dice": 0.85843,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 13
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=13/20
+
+[SegNet] Epoch 20/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 20,
+  "train_loss": 0.650602,
+  "train_dice": 0.85519,
+  "val_loss": 0.660896,
+  "val_dice": 0.84567,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 14
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=14/20
+
+[SegNet] Epoch 21/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 21,
+  "train_loss": 0.66819,
+  "train_dice": 0.852919,
+  "val_loss": 1.179771,
+  "val_dice": 0.581691,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 15
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=15/20
+
+[SegNet] Epoch 22/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 22,
+  "train_loss": 0.724695,
+  "train_dice": 0.826861,
+  "val_loss": 0.756984,
+  "val_dice": 0.809723,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 16
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=16/20
+
+[SegNet] Epoch 23/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 23,
+  "train_loss": 0.724485,
+  "train_dice": 0.829461,
+  "val_loss": 0.756193,
+  "val_dice": 0.807747,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 17
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=17/20
+
+[SegNet] Epoch 24/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 24,
+  "train_loss": 0.719142,
+  "train_dice": 0.827384,
+  "val_loss": 0.728017,
+  "val_dice": 0.821299,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 18
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=18/20
+
+[SegNet] Epoch 25/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 25,
+  "train_loss": 0.708794,
+  "train_dice": 0.829472,
+  "val_loss": 0.722729,
+  "val_dice": 0.819519,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 19
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=19/20
+
+[SegNet] Epoch 26/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 26,
+  "train_loss": 0.709343,
+  "train_dice": 0.831604,
+  "val_loss": 0.717722,
+  "val_dice": 0.827338,
+  "best_val_dice": 0.928018,
+  "best_epoch": 6,
+  "improved": false,
+  "epochs_without_improvement": 20
+}
+[SegNet] Best val_dice so far: 0.928018 at epoch 6 | no_improve=20/20
+[SegNet] Early stopping triggered at epoch 26. Best val_dice=0.928018 at epoch 6.
+Tuning seg inference segnet: 100%
+{
+  "model_name": "segnet",
+  "selected_threshold": 0.65,
+  "selected_close_kernel": 0,
+  "selected_open_kernel": 3,
+  "selection_score": 0.859906,
+  "summary": {
+    "Dice": 0.933843,
+    "Jaccard": 0.880547,
+    "BF-score": 0.749139,
+    "HOG-sim": 0.762832
+  }
+}
+
+====================================================================================================
+TRAIN BASELINE SEGMENTATION: MedT
+====================================================================================================
+{
+  "seg_image_size": 224,
+  "baseline_seg_early_stopping_patience": 20,
+  "baseline_seg_early_stopping_min_delta": 0.0001
+}
+
+[MedT] Epoch 1/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 1,
+  "train_loss": 0.633556,
+  "train_dice": 0.817356,
+  "val_loss": 0.54515,
+  "val_dice": 0.849746,
+  "best_val_dice": 0.849746,
+  "best_epoch": 1,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.849746 at epoch 1 | no_improve=0/20
+
+[MedT] Epoch 2/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 2,
+  "train_loss": 0.461478,
+  "train_dice": 0.881234,
+  "val_loss": 0.427541,
+  "val_dice": 0.890663,
+  "best_val_dice": 0.890663,
+  "best_epoch": 2,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.890663 at epoch 2 | no_improve=0/20
+
+[MedT] Epoch 3/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 3,
+  "train_loss": 0.390326,
+  "train_dice": 0.901468,
+  "val_loss": 0.353428,
+  "val_dice": 0.913542,
+  "best_val_dice": 0.913542,
+  "best_epoch": 3,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.913542 at epoch 3 | no_improve=0/20
+
+[MedT] Epoch 4/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 4,
+  "train_loss": 0.359219,
+  "train_dice": 0.909605,
+  "val_loss": 0.359022,
+  "val_dice": 0.90775,
+  "best_val_dice": 0.913542,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[MedT] Best val_dice so far: 0.913542 at epoch 3 | no_improve=1/20
+
+[MedT] Epoch 5/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 5,
+  "train_loss": 0.336051,
+  "train_dice": 0.915353,
+  "val_loss": 0.418207,
+  "val_dice": 0.880498,
+  "best_val_dice": 0.913542,
+  "best_epoch": 3,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[MedT] Best val_dice so far: 0.913542 at epoch 3 | no_improve=2/20
+
+[MedT] Epoch 6/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 6,
+  "train_loss": 0.319003,
+  "train_dice": 0.919397,
+  "val_loss": 0.315119,
+  "val_dice": 0.919089,
+  "best_val_dice": 0.919089,
+  "best_epoch": 6,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.919089 at epoch 6 | no_improve=0/20
+
+[MedT] Epoch 7/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 7,
+  "train_loss": 0.309944,
+  "train_dice": 0.921356,
+  "val_loss": 0.30173,
+  "val_dice": 0.920384,
+  "best_val_dice": 0.920384,
+  "best_epoch": 7,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.920384 at epoch 7 | no_improve=0/20
+
+[MedT] Epoch 8/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 8,
+  "train_loss": 0.302359,
+  "train_dice": 0.923007,
+  "val_loss": 0.302203,
+  "val_dice": 0.917275,
+  "best_val_dice": 0.920384,
+  "best_epoch": 7,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[MedT] Best val_dice so far: 0.920384 at epoch 7 | no_improve=1/20
+
+[MedT] Epoch 9/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 9,
+  "train_loss": 0.297927,
+  "train_dice": 0.924017,
+  "val_loss": 0.312365,
+  "val_dice": 0.912817,
+  "best_val_dice": 0.920384,
+  "best_epoch": 7,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[MedT] Best val_dice so far: 0.920384 at epoch 7 | no_improve=2/20
+
+[MedT] Epoch 10/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 10,
+  "train_loss": 0.281849,
+  "train_dice": 0.928211,
+  "val_loss": 0.267397,
+  "val_dice": 0.929877,
+  "best_val_dice": 0.929877,
+  "best_epoch": 10,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.929877 at epoch 10 | no_improve=0/20
+
+[MedT] Epoch 11/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 11,
+  "train_loss": 0.283551,
+  "train_dice": 0.927566,
+  "val_loss": 0.272623,
+  "val_dice": 0.927639,
+  "best_val_dice": 0.929877,
+  "best_epoch": 10,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[MedT] Best val_dice so far: 0.929877 at epoch 10 | no_improve=1/20
+
+[MedT] Epoch 12/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 12,
+  "train_loss": 0.276686,
+  "train_dice": 0.929354,
+  "val_loss": 0.258317,
+  "val_dice": 0.933485,
+  "best_val_dice": 0.933485,
+  "best_epoch": 12,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.933485 at epoch 12 | no_improve=0/20
+
+[MedT] Epoch 13/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 13,
+  "train_loss": 0.27706,
+  "train_dice": 0.92945,
+  "val_loss": 0.267902,
+  "val_dice": 0.929783,
+  "best_val_dice": 0.933485,
+  "best_epoch": 12,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[MedT] Best val_dice so far: 0.933485 at epoch 12 | no_improve=1/20
+
+[MedT] Epoch 14/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 14,
+  "train_loss": 0.270949,
+  "train_dice": 0.931313,
+  "val_loss": 0.257845,
+  "val_dice": 0.932282,
+  "best_val_dice": 0.933485,
+  "best_epoch": 12,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[MedT] Best val_dice so far: 0.933485 at epoch 12 | no_improve=2/20
+
+[MedT] Epoch 15/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 15,
+  "train_loss": 0.258211,
+  "train_dice": 0.93423,
+  "val_loss": 0.26484,
+  "val_dice": 0.931123,
+  "best_val_dice": 0.933485,
+  "best_epoch": 12,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[MedT] Best val_dice so far: 0.933485 at epoch 12 | no_improve=3/20
+
+[MedT] Epoch 16/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 16,
+  "train_loss": 0.258497,
+  "train_dice": 0.934175,
+  "val_loss": 0.25164,
+  "val_dice": 0.93256,
+  "best_val_dice": 0.933485,
+  "best_epoch": 12,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[MedT] Best val_dice so far: 0.933485 at epoch 12 | no_improve=4/20
+
+[MedT] Epoch 17/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 17,
+  "train_loss": 0.255071,
+  "train_dice": 0.934847,
+  "val_loss": 0.271254,
+  "val_dice": 0.930387,
+  "best_val_dice": 0.933485,
+  "best_epoch": 12,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[MedT] Best val_dice so far: 0.933485 at epoch 12 | no_improve=5/20
+
+[MedT] Epoch 18/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 18,
+  "train_loss": 0.258114,
+  "train_dice": 0.933924,
+  "val_loss": 0.250475,
+  "val_dice": 0.93768,
+  "best_val_dice": 0.93768,
+  "best_epoch": 18,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.937680 at epoch 18 | no_improve=0/20
+
+[MedT] Epoch 19/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 19,
+  "train_loss": 0.26135,
+  "train_dice": 0.933901,
+  "val_loss": 0.261204,
+  "val_dice": 0.931896,
+  "best_val_dice": 0.93768,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[MedT] Best val_dice so far: 0.937680 at epoch 18 | no_improve=1/20
+
+[MedT] Epoch 20/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 20,
+  "train_loss": 0.252692,
+  "train_dice": 0.935821,
+  "val_loss": 0.243338,
+  "val_dice": 0.934793,
+  "best_val_dice": 0.93768,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[MedT] Best val_dice so far: 0.937680 at epoch 18 | no_improve=2/20
+
+[MedT] Epoch 21/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 21,
+  "train_loss": 0.250095,
+  "train_dice": 0.936159,
+  "val_loss": 0.248044,
+  "val_dice": 0.934869,
+  "best_val_dice": 0.93768,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[MedT] Best val_dice so far: 0.937680 at epoch 18 | no_improve=3/20
+
+[MedT] Epoch 22/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 22,
+  "train_loss": 0.243857,
+  "train_dice": 0.937494,
+  "val_loss": 0.244638,
+  "val_dice": 0.937265,
+  "best_val_dice": 0.93768,
+  "best_epoch": 18,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[MedT] Best val_dice so far: 0.937680 at epoch 18 | no_improve=4/20
+
+[MedT] Epoch 23/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 23,
+  "train_loss": 0.237836,
+  "train_dice": 0.939102,
+  "val_loss": 0.230494,
+  "val_dice": 0.940404,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": true,
+  "epochs_without_improvement": 0
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=0/20
+
+[MedT] Epoch 24/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 24,
+  "train_loss": 0.240265,
+  "train_dice": 0.938538,
+  "val_loss": 0.248912,
+  "val_dice": 0.933739,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 1
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=1/20
+
+[MedT] Epoch 25/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 25,
+  "train_loss": 0.234678,
+  "train_dice": 0.939785,
+  "val_loss": 0.234415,
+  "val_dice": 0.937802,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 2
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=2/20
+
+[MedT] Epoch 26/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 26,
+  "train_loss": 0.236638,
+  "train_dice": 0.9399,
+  "val_loss": 0.243138,
+  "val_dice": 0.936099,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 3
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=3/20
+
+[MedT] Epoch 27/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 27,
+  "train_loss": 0.23887,
+  "train_dice": 0.939416,
+  "val_loss": 0.239392,
+  "val_dice": 0.935282,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 4
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=4/20
+
+[MedT] Epoch 28/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 28,
+  "train_loss": 0.253956,
+  "train_dice": 0.936178,
+  "val_loss": 0.530501,
+  "val_dice": 0.854044,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 5
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=5/20
+
+[MedT] Epoch 29/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 29,
+  "train_loss": 0.270553,
+  "train_dice": 0.932434,
+  "val_loss": 0.273967,
+  "val_dice": 0.932053,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 6
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=6/20
+
+[MedT] Epoch 30/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 30,
+  "train_loss": 0.264049,
+  "train_dice": 0.934333,
+  "val_loss": 0.270469,
+  "val_dice": 0.931067,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 7
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=7/20
+
+[MedT] Epoch 31/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 31,
+  "train_loss": 0.371961,
+  "train_dice": 0.910589,
+  "val_loss": 0.889015,
+  "val_dice": 0.722998,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 8
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=8/20
+
+[MedT] Epoch 32/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 32,
+  "train_loss": 0.546991,
+  "train_dice": 0.870152,
+  "val_loss": 4.907677,
+  "val_dice": 0.031863,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 9
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=9/20
+
+[MedT] Epoch 33/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 33,
+  "train_loss": 0.501371,
+  "train_dice": 0.87927,
+  "val_loss": 0.957591,
+  "val_dice": 0.772374,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 10
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=10/20
+
+[MedT] Epoch 34/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 34,
+  "train_loss": 0.509878,
+  "train_dice": 0.878932,
+  "val_loss": 0.835357,
+  "val_dice": 0.754126,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=11/20
+
+[MedT] Epoch 35/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 35,
+  "train_loss": 0.564613,
+  "train_dice": 0.864596,
+  "val_loss": 0.731261,
+  "val_dice": 0.808915,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 12
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=12/20
+
+[MedT] Epoch 36/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 36,
+  "train_loss": 0.673991,
+  "train_dice": 0.831344,
+  "val_loss": 0.688587,
+  "val_dice": 0.821826,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 13
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=13/20
+
+[MedT] Epoch 37/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 37,
+  "train_loss": 0.666088,
+  "train_dice": 0.832339,
+  "val_loss": 0.695122,
+  "val_dice": 0.820374,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 14
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=14/20
+
+[MedT] Epoch 38/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 38,
+  "train_loss": 0.690241,
+  "train_dice": 0.829343,
+  "val_loss": 0.790945,
+  "val_dice": 0.796832,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 15
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=15/20
+
+[MedT] Epoch 39/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 39,
+  "train_loss": 0.704148,
+  "train_dice": 0.8313,
+  "val_loss": 0.765668,
+  "val_dice": 0.802028,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 16
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=16/20
+
+[MedT] Epoch 40/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 40,
+  "train_loss": 0.668895,
+  "train_dice": 0.849493,
+  "val_loss": 0.623914,
+  "val_dice": 0.860954,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 17
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=17/20
+
+[MedT] Epoch 41/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 41,
+  "train_loss": 0.623612,
+  "train_dice": 0.858214,
+  "val_loss": 0.630865,
+  "val_dice": 0.857634,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 18
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=18/20
+
+[MedT] Epoch 42/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 42,
+  "train_loss": 0.650163,
+  "train_dice": 0.854962,
+  "val_loss": 0.619181,
+  "val_dice": 0.852768,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 19
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=19/20
+
+[MedT] Epoch 43/100
+train baseline seg: 100%
+val baseline seg: 100%
+{
+  "epoch": 43,
+  "train_loss": 0.54723,
+  "train_dice": 0.87937,
+  "val_loss": 0.549351,
+  "val_dice": 0.876274,
+  "best_val_dice": 0.940404,
+  "best_epoch": 23,
+  "improved": false,
+  "epochs_without_improvement": 20
+}
+[MedT] Best val_dice so far: 0.940404 at epoch 23 | no_improve=20/20
+[MedT] Early stopping triggered at epoch 43. Best val_dice=0.940404 at epoch 23.
+Tuning seg inference medt: 100%
+{
+  "model_name": "medt",
+  "selected_threshold": 0.5,
+  "selected_close_kernel": 0,
+  "selected_open_kernel": 3,
+  "selection_score": 0.871223,
+  "summary": {
+    "Dice": 0.942344,
+    "Jaccard": 0.894938,
+    "BF-score": 0.760406,
+    "HOG-sim": 0.780791
+  }
+}
+
+====================================================================================================
+EVALUATE SEGMENTATION: U-Net
+====================================================================================================
+Evaluating U-Net: 100%
+
+====================================================================================================
+EVALUATE SEGMENTATION: SegNet
+====================================================================================================
+Evaluating SegNet: 100%
+
+====================================================================================================
+EVALUATE SEGMENTATION: MedT
+====================================================================================================
+Evaluating MedT: 100%
+
+====================================================================================================
+TRAIN CLASSIFIER: vit
+====================================================================================================
+{
+  "cls_image_size": 224,
+  "cls_imagenet_normalize": true,
+  "cls_mask_background_alpha": 0.2,
+  "cls_mask_blur_kernel": 7,
+  "cls_early_stopping_patience": 10,
+  "cls_early_stopping_min_delta": 0.0001,
+  "cls_use_class_weights": true,
+  "cls_use_weighted_sampler": false,
+  "class_weights": {
+    "Adenocarcinoma": 0.4667,
+    "High-grade IN": 1.9962,
+    "Low-grade IN": 0.5831,
+    "Normal": 4.8056,
+    "Polyp": 0.7816,
+    "Serrated adenoma": 6.4875
+  }
+}
+Resuming vit from epoch 25
+
+[vit] Epoch 26/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 26,
+  "train_loss": 0.014354,
+  "train_acc": 99.422,
+  "val_loss": 1.040969,
+  "val_acc": 87.4439,
+  "best_val_acc": 88.3408,
+  "best_epoch": 15,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[vit] Best val_acc so far: 88.3408 at epoch 15 | no_improve=11/10
+[vit] Early stopping triggered at epoch 26. Best val_acc=88.3408 at epoch 15.
+
+====================================================================================================
+TRAIN CLASSIFIER: swin
+====================================================================================================
+{
+  "cls_image_size": 224,
+  "cls_imagenet_normalize": true,
+  "cls_mask_background_alpha": 0.2,
+  "cls_mask_blur_kernel": 7,
+  "cls_early_stopping_patience": 10,
+  "cls_early_stopping_min_delta": 0.0001,
+  "cls_use_class_weights": true,
+  "cls_use_weighted_sampler": false,
+  "class_weights": {
+    "Adenocarcinoma": 0.4667,
+    "High-grade IN": 1.9962,
+    "Low-grade IN": 0.5831,
+    "Normal": 4.8056,
+    "Polyp": 0.7816,
+    "Serrated adenoma": 6.4875
+  }
+}
+Resuming swin from epoch 34
+
+[swin] Epoch 35/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 35,
+  "train_loss": 0.000871,
+  "train_acc": 99.9358,
+  "val_loss": 0.922598,
+  "val_acc": 92.8251,
+  "best_val_acc": 93.722,
+  "best_epoch": 24,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[swin] Best val_acc so far: 93.7220 at epoch 24 | no_improve=11/10
+[swin] Early stopping triggered at epoch 35. Best val_acc=93.7220 at epoch 24.
+
+====================================================================================================
+TRAIN CLASSIFIER: convnext
+====================================================================================================
+{
+  "cls_image_size": 224,
+  "cls_imagenet_normalize": true,
+  "cls_mask_background_alpha": 0.2,
+  "cls_mask_blur_kernel": 7,
+  "cls_early_stopping_patience": 10,
+  "cls_early_stopping_min_delta": 0.0001,
+  "cls_use_class_weights": true,
+  "cls_use_weighted_sampler": false,
+  "class_weights": {
+    "Adenocarcinoma": 0.4667,
+    "High-grade IN": 1.9962,
+    "Low-grade IN": 0.5831,
+    "Normal": 4.8056,
+    "Polyp": 0.7816,
+    "Serrated adenoma": 6.4875
+  }
+}
+Resuming convnext from epoch 27
+
+[convnext] Epoch 28/50
+train cls: 100%
+val cls: 100%
+{
+  "epoch": 28,
+  "train_loss": 0.010069,
+  "train_acc": 99.8715,
+  "val_loss": 0.573004,
+  "val_acc": 90.1345,
+  "best_val_acc": 93.2735,
+  "best_epoch": 17,
+  "improved": false,
+  "epochs_without_improvement": 11
+}
+[convnext] Best val_acc so far: 93.2735 at epoch 17 | no_improve=11/10
+[convnext] Early stopping triggered at epoch 28. Best val_acc=93.2735 at epoch 17.
+
+====================================================================================================
+EVALUATE CLASSIFIERS
+====================================================================================================
+Test vit: 100%
+Test swin: 100%
+Test convnext: 100%
+{
+  "ensemble_selection_metric": "weighted_f1",
+  "selected_ensemble": "Ensemble (Stacking LogReg)",
+  "candidates": [
+    {
+      "name": "Ensemble (Weighted Avg - Equal)",
+      "kind": "weighted_avg",
+      "val_score": 0.924832,
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    {
+      "name": "Ensemble (Weighted Avg)",
+      "kind": "weighted_avg",
+      "val_score": 0.932815,
+      "weights": [
+        0.0,
+        0.8,
+        0.19999999999999996
+      ]
+    },
+    {
+      "name": "Ensemble (Majority Voting)",
+      "kind": "majority_vote",
+      "val_score": 0.933781,
+      "weights": null
+    },
+    {
+      "name": "Ensemble (Stacking LogReg)",
+      "kind": "stacking_logreg",
+      "val_score": 0.944943,
+      "weights": null
+    }
+  ]
+}
+
+====================================================================================================
+DONE
+====================================================================================================
+Everything saved under: results2/paper_run
+Key outputs:
+- Log: results2/paper_run/logs/run_log.txt
+- Table 2 run: results2/paper_run/results/tables/table2_run_all_models.csv
+- Table 3 run: results2/paper_run/results/tables/table3_run.csv
+- Figure 3: results2/paper_run/results/plots/figure3_preprocessing.png
+- Figure 5: results2/paper_run/results/plots/figure5_accuracy_vs_epoch.png
+- Figure 6: results2/paper_run/results/plots/figure6_roc_comparison.png
+
+====================================================================================================
+DATA SPLITS
+====================================================================================================
+train: 1558
+class_display
+Adenocarcinoma      557
+High-grade IN       130
+Low-grade IN        446
+Normal               53
+Polyp               332
+Serrated adenoma     40
+cases: 417
+val  : 223
+class_display
+Adenocarcinoma      79
+High-grade IN       19
+Low-grade IN        64
+Normal               8
+Polyp               47
+Serrated adenoma     6
+cases: 30
+test : 445
+class_display
+Adenocarcinoma      159
+High-grade IN        37
+Low-grade IN        127
+Normal               15
+Polyp                95
+Serrated adenoma     12
+cases: 76
+fingerprint 8a06822e0ffa04ca
+train images 1558 cases 417 {'Adenocarcinoma': 557, 'High-grade IN': 130, 'Low-grade IN': 446, 'Normal': 53, 'Polyp': 332, 'Serrated adenoma': 40}
+val images 223 cases 30 {'Adenocarcinoma': 79, 'High-grade IN': 19, 'Low-grade IN': 64, 'Normal': 8, 'Polyp': 47, 'Serrated adenoma': 6}
+test images 445 cases 76 {'Adenocarcinoma': 159, 'High-grade IN': 37, 'Low-grade IN': 127, 'Normal': 15, 'Polyp': 95, 'Serrated adenoma': 12}
+overlaps {'train-val': 0, 'train-test': 0, 'val-test': 0}
