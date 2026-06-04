@@ -74,9 +74,9 @@ HCS-NET provides a complementary, robust pipeline tailored for highly accurate p
 * [Akshat Jha](https://github.com/AkshatJha0411)
 * [Bhavya Sunkari](https://github.com/Bhavya445)
 * [Madhav Aggarwal](https://github.com/madhavCodez1006)
+* [Aashvi Garg](https://github.com/Aashvi-11)
 * Harsh Vardhan Sharma
 * Shubhankit Singh
-* Aashvi Garg
 * Anoushka Waghmare
 * Sezal Rana
 * Mohit Kulhari
